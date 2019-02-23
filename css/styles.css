@@ -491,6 +491,9 @@ nav h1 a {
     margin: 5px;
     width: calc(100% - 10px);
   }
+  #restaurants-list article h1 {
+    font-weight: bold;
+  }
 }
 
 
