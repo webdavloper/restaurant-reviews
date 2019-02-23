@@ -515,6 +515,9 @@ nav h1 a {
   .inside #footer {
     position: relative;
   }
+  #restaurant-name {
+    font-weight: bold;
+  }
   #restaurant-img,
   #restaurant-cuisine,
   #reviews-list li {
