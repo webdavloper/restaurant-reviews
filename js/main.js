@@ -211,7 +211,7 @@ createRestaurantHTML = (restaurant) => {
   info.className = 'restaurant-info';
 
   // title
-  const name = document.createElement('h1');
+  const name = document.createElement('h2');
   name.innerHTML = restaurant.name;
   name.tabIndex = 0;
   info.append(name);
