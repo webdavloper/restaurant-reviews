@@ -23,9 +23,11 @@ const cacheUrls = [
 ];
 
 if (navigator.serviceWorker) {
-  navigator.serviceWorker.register('./sw.js')
-    .then(_ => console.log('Service worker registered.'))
-    .catch(_ => console.log('Failed to register Service Worker.'))
+  window.addEventListener('load', _ => {
+    navigator.serviceWorker.register('./sw.js')
+      .then(_ => console.log('Service worker registered.'))
+      .catch(_ => console.log('Failed to register Service Worker.'))
+  });
 }
 
 self.addEventListener('install', e => {
@@ -40,7 +42,7 @@ self.addEventListener('activate', e => {
     caches.keys()
       .then(cacheNames => {
         return cacheNames.filter(name => {
-          return name.startsWith(('restaurant-') && name != staticCacheName)
+          return name.startsWith('restaurant-') && name != staticCacheName
         })
       })
       .then(cacheNames => Promise.all(cacheNames))
